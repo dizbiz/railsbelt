@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EventPlanner</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+		<%= yield %>
+		<% if flash[:errors] %>
+			<% flash[:errors].each do |error| %>
+				<p><%= error %></p>
+			<% end %>	
+		<% end %>
+	</div>
+</body>
+</html>

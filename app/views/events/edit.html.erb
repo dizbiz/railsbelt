@@ -1,0 +1,19 @@
+<h1>Editing <%= @event.name %></h1>
+
+<form action="/events/<%= @event.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label for="Name">Name:</label>
+  <input type="text" name="event[name]" id="Name" value="<%= @event.name %>">
+  <label for="Date">Date:</label>
+  <input type="text" name="event[date]" id="Date" value="<%= @event.date %>">
+  <label for="City">City:</label>
+  <input type="text" name="event[city]" id="City" value="<%= @event.city %>">
+  <label>State</label>
+		<select name="event[state]">
+			<% get_states.each do |state| %>
+				<option value="<%=state.id%>"><%= state.name %></option>
+			<% end %>
+		</select>
+  <input type="submit" value="Update Event">
+</form>

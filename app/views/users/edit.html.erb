@@ -1,0 +1,29 @@
+<h1>Editing <%= @user.first_name %></h1>
+
+<form action="/users/<%= @user.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<div>			
+				<label>First Name</label>
+				<input type="text" name="user[first_name]" value="<%= @user.first_name %>">
+			</div>
+			<div>
+				<label>Last Name</label>
+				<input type="text" name="user[last_name]" value="<%= @user.last_name %>">
+			</div>			
+			<div>
+				<label>Email</label>
+				<input type="text" name="user[email]" value="<%= @user.email %>">
+			</div>
+			<div>
+				<label>City</label>
+				<input type="text" name="user[city]" value="<%= @user.city %>">
+			</div>
+			<div>
+				<label>State</label>
+				<%= select_tag "user[state]", options_from_collection_for_select(@states, "id", "name", @user.state_id) %>
+			<div>
+				<input type="submit" name="Update Records">
+			</div>															
+		</form> 
+	</div>
