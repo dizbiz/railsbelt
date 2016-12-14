@@ -16,7 +16,7 @@
  		</tr>
  		<% @in_state_events.each do |event| %>
  			<tr>
- 				<td><%= event.name %></td>
+ 				<td><a href="/events/<%=event.id%>"><%= event.name %></a></td>	
  				<td><%= event.date %></td>
  				<td><%= event.city %></td>
  				<td><%= event.host.first_name %></td>
@@ -51,7 +51,7 @@
  		</tr>
  		<% @out_of_state_events.each do |event| %>
  			<tr>
- 				<td><%= event.name %></td>
+ 				<td><a href="/events/<%=event.id%>"><%= event.name %></a></td>
  				<td><%= event.date %></td>
  				<td><%= event.city %></td>
  				<td><%= event.state.name %></td>

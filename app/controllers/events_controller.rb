@@ -3,6 +3,7 @@ protect_from_forgery
 	def index
 		@in_state_events = Event.where(state: current_user.state).includes(:host, :users)
 		@out_of_state_events = Event.where.not(state: current_user.state).includes(:host, :users, :state)
+
 	end
 
 	def create
@@ -13,6 +14,18 @@ protect_from_forgery
 				})
 			)
 		redirect_to '/events'
+	end
+
+	def attend
+		@event.attendees << current_user
+		@event.save
+	end
+
+	def show
+		@event = Event.find(params[:id])
+		@comments = @event.comments
+		# @attendees = EventRoster.@event
+		
 	end
 
 	def edit

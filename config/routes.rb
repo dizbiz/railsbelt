@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :users, :sessions, :events, :comments
   post 'event_rosters/:id' => 'event_rosters#create'
   delete 'event_rosters/:id' => 'event_rosters#destroy'
+  # post 'attend', on: :member
   root 'sessions#new'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
