@@ -17,6 +17,7 @@ protect_from_forgery
 
 	def edit
     @event = Event.find(params[:id])
+   	@states = get_states
 	end
 
 	def update

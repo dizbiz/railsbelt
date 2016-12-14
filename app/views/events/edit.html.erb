@@ -11,7 +11,7 @@
   <input type="text" name="event[city]" id="City" value="<%= @event.city %>">
   <label>State</label>
   <label>State</label>
-    <%= select_tag "user[state]", options_from_collection_for_select(@states, "id", "name", @user.state_id) %>
+    <%= select_tag "event[state]", options_from_collection_for_select(@states, "id", "name", @event.state_id) %>
 		</select>
   <input type="submit" value="Update Event">
 </form>
