@@ -8,10 +8,10 @@ class User < ActiveRecord::Base
   #belongs_to :host, class_name: 'User', foreign_key: 'user_id'
 	EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
 	validates :first_name, :last_name, presence: true, length: { in: 2..20 }
-	validates :email_address, presence: true, uniqueness: { case_sensitive: false }, format: { with: EMAIL_REGEX }
+	validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: EMAIL_REGEX }
 	validates :age, numericality: { greater_than: 10, less_than: 150}
 	before_save do
-		self.email_address.downcase!
+		self.email.downcase!
 	end
   before_create do
     self.admin = false #assuming there is an admin field with a boolean value
