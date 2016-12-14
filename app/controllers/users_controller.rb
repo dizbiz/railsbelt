@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+protect_from_forgery
 	def create
 		user = User.new(user_params.merge({state: State.find(user_params[:state])}))
 		if user.save

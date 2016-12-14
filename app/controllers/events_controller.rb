@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+protect_from_forgery
 	def index
 		@in_state_events = Event.where(state: current_user.state).includes(:host, :users)
 		@out_of_state_events = Event.where.not(state: current_user.state).includes(:host, :users, :state)
