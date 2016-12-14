@@ -30,6 +30,11 @@ protect_from_forgery
 		redirect_to '/events'
 	end
 
+	def destroy
+	event = Event.find(params[:id])
+	event.destroy
+	redirect_to "/events"
+	end
 	private
 		def event_params
 			params.require(:event).permit(:name, :date, :city, :state)

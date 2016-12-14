@@ -26,7 +26,7 @@
  						<a href="/event_rosters/<%= event.id %>" data-method="delete">Cancel</a>
  						<% elsif event.host == current_user %>
  							<a href="/events/<%= event.id %>/edit">Edit</a>&nbsp; |&nbsp;
- 							<a href="/event/<%=event.id%>" data-method="delete">Delete</a>
+ 							<a href="/events/<%=event.id%>" data-method="delete">Delete</a>
  						<% else %>
  							<a href="/event_rosters/<%=event.id%>" data-method="post">Join</a>
  					<% end %>	
@@ -62,7 +62,7 @@
  						<a href="/event_rosters/<%= event.id %>" data-method="delete">Cancel</a>
  						<% elsif event.host == current_user %>
  							<a href="/events/<%= event.id %>/edit">Edit</a>&nbsp; |&nbsp;
- 							<a href="/event/<%=event.id%>" data-method="delete">Delete</a>
+ 							<a href="/events/<%=event.id%>" data-method="delete">Delete</a>
  						<% else %>
  							<a href="/event_rosters/<%=event.id%>" data-method="post">Join</a>
  					<% end %>	
