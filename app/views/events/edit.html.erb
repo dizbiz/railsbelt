@@ -10,7 +10,6 @@
   <label for="City">City:</label>
   <input type="text" name="event[city]" id="City" value="<%= @event.city %>">
   <label>State</label>
-  <label>State</label>
     <%= select_tag "event[state]", options_from_collection_for_select(@states, "id", "name", @event.state_id) %>
 		</select>
   <input type="submit" value="Update Event">
